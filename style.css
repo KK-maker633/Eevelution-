@@ -1,40 +1,48 @@
 body {
-  background-color: #ffe6f2; /* paler pink */
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
-  color: #4b3b72;
-  text-align: center;
+  font-family: Arial, sans-serif;
+  background: #f0f8ff; /* soft blue like the reference */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   margin: 0;
-  padding: 20px;
 }
 
-h1 {
-  font-size: 2rem; /* smaller header */
-  margin-bottom: 30px;
+/* Main quiz card */
+#quizBox {
+  background: white;
+  padding: 25px;
+  width: 350px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+  text-align: center;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 25px;
-  max-width: 900px;
-  margin: auto;
-}
-
-.card {
-  background: #ffffffaa;
-  padding: 15px;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.card img {
+/* Buttons */
+.btn {
+  display: block;
   width: 100%;
+  margin: 8px 0;
+  padding: 10px;
+  border: none;
   border-radius: 10px;
-  background: #fff;
-  border: 2px solid #4b3b72;
+  background: #ffffff;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.2s;
 }
 
-.card p {
-  margin-top: 10px;
-  font-size: 1rem;
+/* Button hover */
+.btn:hover {
+  transform: scale(1.03);
+  background: #e9f9ff;
 }
+
+/* Result image styling */
+#result img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
