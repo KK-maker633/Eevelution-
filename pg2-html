@@ -1,0 +1,48 @@
+<div class="grid">
+
+  <div class="card">
+    <img src="/mnt/data/Screenshot 2025-11-25 101132.png" alt="Glaceon">
+    <h3>Glaceon</h3>
+  </div>
+
+  <div class="card">
+    <img src="/mnt/data/Screenshot 2025-11-25 101233.png" alt="Vaporeon">
+    <h3>Vaporeon</h3>
+  </div>
+
+  <div class="card">
+    <img src="/mnt/data/Screenshot 2025-11-25 101707.png" alt="Eevee">
+    <h3>Eevee</h3>
+  </div>
+
+  <div class="card">
+    <img src="/mnt/data/Screenshot 2025-11-25 102352.png" alt="Flareon">
+    <h3>Flareon</h3>
+  </div>
+
+  <div class="card">
+    <img src="/mnt/data/Screenshot 2025-11-25 102403.png" alt="Jolteon">
+    <h3>Jolteon</h3>
+  </div>
+
+  <div class="card">
+    <img src="/mnt/data/Screenshot 2025-11-25 102418.png" alt="Espeon">
+    <h3>Espeon</h3>
+  </div>
+
+  <div class="card">
+    <img src="/mnt/data/Screenshot 2025-11-25 102428.png" alt="Umbreon">
+    <h3>Umbreon</h3>
+  </div>
+
+  <div class="card">
+    <img src="/mnt/data/Screenshot 2025-11-25 102449.png" alt="Leafeon">
+    <h3>Leafeon</h3>
+  </div>
+
+  <div class="card">
+    <img src="/mnt/data/Screenshot 2025-11-25 102526.png" alt="Sylveon">
+    <h3>Sylveon</h3>
+  </div>
+
+</div>
