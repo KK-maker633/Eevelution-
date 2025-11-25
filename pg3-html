@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Eeveelution Quiz</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  #quizBox {
+    background: aqua;
+    padding: 20px;
+    width: 320px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    text-align: center;
+  }
+  .btn {
+    display: block;
+    width: 100%;
+    margin: 8px 0;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background: white;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  #result img {
+    width: 100%;
+    border-radius: 10px;
+  }
+</style>
+</head>
+<body>
+<div id="quizBox">
+  <h2 id="question"></h2>
+  <div id="answers"></div>
+  <div id="result" style="display:none;"></div>
+  <button id="resetBtn" class="btn" style="display:none; margin-top:10px;">Reset Quiz</button>
+</div>
+
+<script>
+const images = {
+  glaceon: "/mnt/data/Screenshot 2025-11-25 101132.png",
+  vaporeon: "/mnt/data/Screenshot 2025-11-25 101233.png",
+  eevee: "/mnt/data/Screenshot 2025-11-25 101707.png",
+  flareon: "/mnt/data/Screenshot 2025-11-25 102352.png",
+  jolteon: "/mnt/data/Screenshot 2025-11-25 102403.png",
+  espeon: "/mnt/data/Screenshot 2025-11-25 102418.png",
+  umbreon: "/mnt/data/Screenshot 2025-11-25 102428.png",
+  leafeon: "/mnt/data/Screenshot 2025-11-25 102449.png",
+  sylveon: "/mnt/data/Screenshot 2025-11-25 102526.png",
+};
+
+const quiz = [
+  {
+    q: "What time of day do you like?",
+    a: ["morning", "afternoon", "night"],
+  },
+  {
+    q: "What is your favorite color?",
+    a: ["pink","sky blue","blue","green","brown","yellow","red","black","purple"],
+  },
+  {
+    q: "What is your favorite type?",
+    a: ["ice","fairy","dark","psychic","grass","water","electric","fire","normal"],
+  }
+];
+
+const results = {
+  glaceon: {time:"night", color:"sky blue", type:"ice"},
+  leafeon: {time:"afternoon", color:"green", type:"grass"},
+  eevee: {time:"morning", color:"brown", type:"normal"},
+  sylveon: {time:"afternoon", color:"pink", type:"fairy"},
+  espeon: {time:"afternoon", color:"purple", type:"psychic"},
+  umbreon: {time:"night", color:"black", type:"dark"},
+  flareon: {time:"morning", color:"red", type:"fire"},
+  jolteon: {time:"morning", color:"yellow", type:"electric"},
+  vaporeon: {time:"morning", color:"blue", type:"water"},
+};
+
+let step = 0;
+let answers = [];
+
+function loadQuestion() {
+  document.getElementById("result").style.display = "none";
+  const q = quiz[step];
+  document.getElementById("question").textContent = q.q;
+  const answersDiv = document.getElementById("answers");
+  answersDiv.innerHTML = "";
+
+  q.a.forEach(option => {
+    const btn = document.createElement("button");
+    btn.className = "btn";
+    btn.textContent = option;
+    btn.onclick = () => selectAnswer(option);
+    answersDiv.appendChild(btn);
+  });
+}
+
+function selectAnswer(option) {
+  answers.push(option);
+  step++;
+  if (step < quiz.length) {
+    document.getElementById('resetBtn').onclick = function() {
+  step = 0;
+  answers = [];
+  document.getElementById('resetBtn').style.display = 'none';
+  document.getElementById('result').style.display = 'none';
+  document.getElementById('answers').innerHTML = '';
+  loadQuestion();
+};
+};
+
+loadQuestion();
+  } else {
+    showResult();
+  }
+}
+
+function showResult() {
+  const [time, color, type] = answers;
+  let match = "eevee";
+
+  for (const evo in results) {
+    const r = results[evo];
+    if (r.time === time && r.color === color && r.type === type) {
+      match = evo;
+    }
+  }
+
+  document.getElementById("question").textContent = "You are " + match + "!";
+  document.getElementById("answers").innerHTML = "";
+
+  const res = document.getElementById("result");
+  res.style.display = "block";
+  res.innerHTML = `<img src="${images[match]}" alt="${match}">`;
+}
+
+loadQuestion();
+
+</script>
+</body>
+</html>
