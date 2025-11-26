@@ -1,6 +1,7 @@
+
 body {
-  font-family: Arial, sans-serif;
-  background: #f0f8ff; /* soft blue like the reference */
+  font-family: "Comic Sans MS", "Fredoka", Arial, sans-serif;
+  background: #ffe6f2; /* soft pink like reference */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,41 +9,44 @@ body {
   margin: 0;
 }
 
-/* Main quiz card */
+/* Quiz card */
 #quizBox {
   background: white;
   padding: 25px;
   width: 350px;
-  border-radius: 20px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+  border-radius: 22px;
   text-align: center;
+  box-shadow: 
+      0 0 12px rgba(255, 120, 180, 0.7),
+      0 0 25px rgba(255, 120, 180, 0.4); /* pink glow */
+  border: 3px solid #ffffffaa;
 }
 
 /* Buttons */
 .btn {
   display: block;
   width: 100%;
-  margin: 8px 0;
-  padding: 10px;
+  margin: 10px 0;
+  padding: 12px;
   border: none;
-  border-radius: 10px;
-  background: #ffffff;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  border-radius: 15px;
+  background: #fef8ff;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 17px;
+  font-weight: bold;
+  border: 2px solid #ffc7e6;
   transition: 0.2s;
 }
 
-/* Button hover */
 .btn:hover {
+  background: #ffd6f0;
   transform: scale(1.03);
-  background: #e9f9ff;
 }
 
-/* Result image styling */
+/* Image result */
 #result img {
   width: 100%;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  border-radius: 18px;
+  border: 3px solid #ffd0ec;
+  box-shadow: 0 0 15px rgba(255,150,200,0.6);
 }
-
